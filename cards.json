@@ -1,0 +1,222 @@
+{
+  "categories": {
+    "comm":     { "label": "Communications & Content", "color": "#E85D04" },
+    "tools":    { "label": "Day-to-Day Tools",         "color": "#2196F3" },
+    "people":   { "label": "People & Devices",         "color": "#7B1FA2" },
+    "infra":    { "label": "Infrastructure & Safety",   "color": "#2E7D32" },
+    "strategy": { "label": "Strategy & Growth",         "color": "#C62828" },
+    "game":     { "label": "How to Play",               "color": "#00838F" }
+  },
+  "cards": [
+    {
+      "number": "01",
+      "category": "comm",
+      "title": "Email Newsletters & Campaigns",
+      "description": "How do you stay in touch with supporters and donors? A tool like Mailchimp, or someone sending updates from their personal Gmail?",
+      "why": "Email is still the most reliable way to reach people who care about your mission. No newsletter means you're invisible between galas."
+    },
+    {
+      "number": "02",
+      "category": "comm",
+      "title": "Social Media Management",
+      "description": "Which platforms are you on, and who's posting? Is there a plan, or does someone throw something up when they remember?",
+      "why": "A dormant presence makes an active org look inactive. Better to do one platform well than five poorly."
+    },
+    {
+      "number": "03",
+      "category": "comm",
+      "title": "Website Content & Updates",
+      "description": "When's the last time someone updated your website? Are your staff bios accurate, or is there a smiling face from three EDs ago?",
+      "why": "Your website is the first impression for donors and the people you serve. Outdated content erodes trust fast."
+    },
+    {
+      "number": "04",
+      "category": "comm",
+      "title": "Blog / Storytelling Content",
+      "description": "Does your org publish impact stories, client spotlights, or program updates? Who writes them? Where do they live?",
+      "why": "Funders want to see impact, not just hear about it. Without stories, you're scrambling every time someone asks \"what have you been up to?\""
+    },
+    {
+      "number": "05",
+      "category": "comm",
+      "title": "Graphic Design & Visual Assets",
+      "description": "Who makes your flyers, social graphics, and event posters? Do you have a consistent logo and style, or does every piece look like a different org?",
+      "why": "Visual consistency builds recognition and trust. You don't need a designer — you need shared templates anyone can use."
+    },
+    {
+      "number": "06",
+      "category": "tools",
+      "title": "Email & Calendar Systems",
+      "description": "Does everyone have an org email address, or are people using personal accounts? Is there a shared calendar for events and deadlines?",
+      "why": "Org email is your identity. If a staff member leaves and their personal Gmail was the main contact, you lose access to everything connected to it."
+    },
+    {
+      "number": "07",
+      "category": "tools",
+      "title": "File Storage & Documents",
+      "description": "How does your org store and share documents? Google Drive, Dropbox, a shared folder on someone's laptop, or a file cabinet in the back office?",
+      "why": "When a key staff member leaves, can anyone find the files? Clear storage keeps you from losing — or leaking — institutional knowledge."
+    },
+    {
+      "number": "08",
+      "category": "tools",
+      "title": "Donor / CRM Database",
+      "description": "Where do you track donors, volunteers, and clients? A purpose-built CRM, a spreadsheet someone started in 2017, or a mix of both?",
+      "why": "If donor history lives in one person's head, you can't follow up effectively. When that person leaves, the relationships leave too."
+    },
+    {
+      "number": "09",
+      "category": "tools",
+      "title": "Accounting & Financial Software",
+      "description": "How do you manage your books? Who has access? Can your board treasurer pull a report without calling someone first?",
+      "why": "Clean financials are required for grants, audits, and your tax-exempt status. If only one person understands the system, you're one resignation from a crisis."
+    },
+    {
+      "number": "10",
+      "category": "tools",
+      "title": "Project & Task Management",
+      "description": "How does your team track who's doing what? A tool like Asana, a whiteboard, a chain of emails, or just... vibes?",
+      "why": "Small teams move fast, but things fall through the cracks when nothing is written down. You need a shared sense of what's in progress and what's done."
+    },
+    {
+      "number": "11",
+      "category": "people",
+      "title": "User Onboarding & Offboarding",
+      "description": "When someone new starts, how do they get email, file access, and logins? When someone leaves, how do you cut access?",
+      "why": "Offboarding is where the real risk lives. A former employee with access to your donor database or bank account is a liability you might not discover until it's too late."
+    },
+    {
+      "number": "12",
+      "category": "people",
+      "title": "Account Security & Passwords",
+      "description": "Is everyone reusing passwords? Does anyone use two-factor authentication? Is the org's Facebook password floating around in a text thread?",
+      "why": "One compromised password can take down your email, donor data, or bank account. A password manager and 2FA are low-cost, high-impact protections."
+    },
+    {
+      "number": "13",
+      "category": "people",
+      "title": "Staff/Volunteer Device Management",
+      "description": "What devices do people use for org work — org-owned laptops, personal phones, a shared desktop? Do you know what's connecting to your systems?",
+      "why": "If a volunteer's laptop gets stolen with client data on it, that's your problem. Knowing what devices touch your data is step one in protecting it."
+    },
+    {
+      "number": "14",
+      "category": "people",
+      "title": "Software Licensing & Subscriptions",
+      "description": "How many subscriptions is your org paying for? Who signed up for them? Are there tools nobody uses, or tools people need but can't afford?",
+      "why": "Subscription creep is real — $15/month here, $30 there, and suddenly you're spending thousands on software nobody's audited. Many tools offer nonprofit discounts."
+    },
+    {
+      "number": "15",
+      "category": "infra",
+      "title": "Domain Names & DNS",
+      "description": "Who registered your domain? Who pays to renew it? Is it under the org's account, or tied to a former board member's GoDaddy login?",
+      "why": "If your domain expires, your website and email vanish overnight. Boring to get right — until it's an emergency."
+    },
+    {
+      "number": "16",
+      "category": "infra",
+      "title": "Website Hosting & Reliability",
+      "description": "Where does your website actually live — Squarespace, WordPress, a server someone set up years ago? Who do you call when it goes down?",
+      "why": "Your site going down during a fundraising campaign is a missed opportunity you can't get back. Know who hosts it, what you pay, and how to get help."
+    },
+    {
+      "number": "17",
+      "category": "infra",
+      "title": "Backup & Disaster Recovery",
+      "description": "If your office flooded or your Google account got hacked, what would you lose? Do you have backups? Have you ever tested restoring one?",
+      "why": "Ransomware, accidental deletion, a failed hard drive — any of these can wipe out years of data. A backup you've never tested is barely better than none."
+    },
+    {
+      "number": "18",
+      "category": "infra",
+      "title": "Data Privacy & Compliance",
+      "description": "What sensitive data do you collect — client records, health info, donor financials, data from minors? Where is it stored, and who can access it?",
+      "why": "You may have legal obligations under HIPAA, FERPA, or state privacy laws. A data breach destroys the trust you've spent years building."
+    },
+    {
+      "number": "19",
+      "category": "infra",
+      "title": "Network & Office IT",
+      "description": "Who manages the Wi-Fi, the printer, the phone system? Is there a closet with a blinking router nobody's touched in three years?",
+      "why": "When the internet goes down before a big mailing, someone has to fix it. If nobody knows the Wi-Fi password, a simple problem becomes a lost afternoon."
+    },
+    {
+      "number": "20",
+      "category": "infra",
+      "title": "Physical Security & Surveillance",
+      "description": "Does your org have cameras, alarms, keycard access, or a visitor sign-in? Who monitors them? Where does the footage go?",
+      "why": "If clients, children, or vulnerable populations visit your space, physical security is part of your duty of care. Someone needs to own the data."
+    },
+    {
+      "number": "21",
+      "category": "strategy",
+      "title": "Vendor Selection & Tech Planning",
+      "description": "When you need a new tool, how do you choose? Does someone Google around, or is there a process for evaluating options and checking nonprofit pricing?",
+      "why": "Bad tool choices compound. A CRM that doesn't talk to your email platform is hard to undo. A little planning upfront saves a lot of pain."
+    },
+    {
+      "number": "22",
+      "category": "strategy",
+      "title": "Training & Digital Literacy",
+      "description": "How comfortable is your team with the tech they use? When you roll out a new tool, is there a plan for teaching people, or is it an afterthought?",
+      "why": "The best tools don't help if people can't or won't use them. Training should be part of every rollout, not something you figure out later."
+    },
+    {
+      "number": "23",
+      "category": "strategy",
+      "title": "Accessibility & Inclusion",
+      "description": "How's your website look on a cracked Android phone with slow data? Does your newsletter work for a family that speaks Spanish or Vietnamese?",
+      "why": "The communities we serve often have the oldest devices and the most language barriers. Our tech should meet people where they are."
+    },
+    {
+      "number": "24",
+      "category": "strategy",
+      "title": "Data & Impact Reporting",
+      "description": "Can you pull the numbers a funder asks for without a week of digging? Or is your data scattered across intake forms, spreadsheets, and someone's memory?",
+      "why": "Funders want outcomes, boards want dashboards, grant apps want specifics. If you can't answer \"how many did you serve,\" you're leaving money on the table."
+    },
+    {
+      "number": "25",
+      "category": "strategy",
+      "title": "AI & Automation",
+      "description": "Is your org experimenting with AI — for grant drafts, meeting notes, intake data? Or are staff quietly using ChatGPT with no org-wide conversation?",
+      "why": "AI is moving fast. Using it to draft a newsletter is different from using it to make decisions about clients. A deliberate conversation now beats discovering problems later."
+    },
+    {
+      "number": "Game",
+      "category": "game",
+      "title": "Who's Got This?",
+      "description": "Spread out all the cards. For each one, name the person responsible. Write their name on a sticky note and place it on the card. No name? That's a gap. The same name on a dozen cards? That person is stretched thin.",
+      "bestFor": "Team meetings, board discussions, new ED onboarding"
+    },
+    {
+      "number": "Game",
+      "category": "game",
+      "title": "My Hand",
+      "description": "Sort every card into three piles: \"I can handle this\" / \"I want to learn this\" / \"I'd rather someone else handle this.\" Be honest — there are no wrong answers. See your skills clearly and identify where you need support.",
+      "bestFor": "Solo EDs, individual contributors, anyone wearing too many hats"
+    },
+    {
+      "number": "Game",
+      "category": "game",
+      "title": "Org Health Check",
+      "description": "Rate each card: \"We're solid\" / \"Getting by\" / \"Struggling\" / \"Haven't started.\" Lay them in four columns. The last two columns are your priority list.",
+      "bestFor": "Annual planning, strategic retreats, grant writing prep"
+    },
+    {
+      "number": "Game",
+      "category": "game",
+      "title": "Hackathon Scouting",
+      "description": "For each card, ask: could a team of volunteers solve this in 48 hours? Sort into \"yes,\" \"maybe,\" and \"not a fit.\" For the \"yes\" pile, describe the problem in one sentence — that's a dsmHack project seed.",
+      "bestFor": "Pre-hackathon prep, dsmHack Nonprofit Tech Plan Workshop"
+    },
+    {
+      "number": "Game",
+      "category": "game",
+      "title": "Budget Reality",
+      "description": "Sort cards into four piles: \"Free / internal\" / \"We pay for this\" / \"We should be paying but aren't\" / \"Paying too much.\" Pile three is where risk lives. Pile four is where savings hide.",
+      "bestFor": "Budget season, finance committee meetings, cost audits"
+    }
+  ]
+}

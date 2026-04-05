@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nonprofit Tech Cards — dsmHack</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  /* ===== RESET & BASE (v4 — landscape, poker size 2.5×3.5, 8-up) ===== */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Lexend', sans-serif;
+    background: #f0f0f0;
+    color: #333;
+    font-size: 16px;
+  }
+
+  :root {
+    --card-bg: #ffffff;
+    --card-text: #1a1a1a;
+    --card-dim: #555;
+    --accent: #222;
+
+    /* Category colors */
+    --cat-comm: #E85D04;
+    --cat-tools: #2196F3;
+    --cat-people: #7B1FA2;
+    --cat-infra: #2E7D32;
+    --cat-strategy: #C62828;
+    --cat-game: #00838F;
+  }
+
+  /* ===== PAGE: landscape 11×8.5, 4 cols × 2 rows ===== */
+  .page {
+    width: 11in;
+    height: 8.5in;
+    margin: 0.5in auto;
+    background: white;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    gap: 0;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.12);
+  }
+
+  /* ===== CARD: exact poker 2.5 × 3.5 ===== */
+  .card {
+    width: 2.5in;
+    height: 3.5in;
+    background: var(--card-bg);
+    color: var(--card-text);
+    border-radius: 0.1in;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    border: 1px dashed #bbb;
+  }
+
+  .card-header {
+    background: var(--accent);
+    color: #fff;
+    padding: 0.1in 0.18in 0.08in;
+    border-radius: 0;
+  }
+
+  .card-body {
+    padding: 0.08in 0.18in 0.12in;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .card-number {
+    font-family: 'Space Mono', monospace;
+    font-size: .9rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: #fff;
+    margin-bottom: 0.15rem;
+    line-height: 1.1;
+  }
+
+  .card-category {
+    font-family: 'Space Mono', monospace;
+    font-size: .7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.2;
+  }
+
+  .card-title {
+    font-family: 'Lexend', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.2;
+    height: 3rem;
+    color: #111;
+    margin-bottom: 0.05in;
+    border-bottom: 0.5pt solid rgba(0,0,0,0.15);
+    padding-bottom: 0.04in;
+    padding-top: 0.04in;
+  }
+
+  .card-description {
+    font-size: .7rem;
+    font-weight: 300;
+    line-height: 1.4;
+    color: var(--card-text);
+    flex: 1;
+  }
+
+  .card-why {
+    margin-top: 0.06in;
+    padding-top: 0.05in;
+    border-top: 0.5pt solid rgba(0,0,0,0.15);
+  }
+
+  .card-why-label {
+    font-family: 'Space Mono', monospace;
+    font-size: .7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.02in;
+  }
+
+  .card-why-text {
+    font-size: .7rem;
+    font-weight: 300;
+    line-height: 1.35;
+    color: var(--card-dim);
+    font-style: italic;
+  }
+
+  /* ===== GAME CARDS ===== */
+  .card.game-card .card-description {
+    font-size: .7rem;
+    line-height: 1.35;
+  }
+
+  .card.game-card .card-best-for {
+    margin-top: 0.05in;
+    padding-top: 0.04in;
+    border-top: 0.5pt solid rgba(0,0,0,0.15);
+  }
+
+  .card.game-card .card-best-for-label {
+    font-family: 'Space Mono', monospace;
+    font-size: .7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.02in;
+  }
+
+  .card.game-card .card-best-for-text {
+    font-size: .7rem;
+    font-weight: 300;
+    line-height: 1.3;
+    color: var(--card-dim);
+  }
+
+  /* ===== CATEGORY COLORS (header block only) ===== */
+  .card[data-cat="comm"]     .card-header { background: var(--cat-comm); }
+  .card[data-cat="comm"]     .card-why-label { color: var(--cat-comm); }
+
+  .card[data-cat="tools"]    .card-header { background: var(--cat-tools); }
+  .card[data-cat="tools"]    .card-why-label { color: var(--cat-tools); }
+
+  .card[data-cat="people"]   .card-header { background: var(--cat-people); }
+  .card[data-cat="people"]   .card-why-label { color: var(--cat-people); }
+
+  .card[data-cat="infra"]    .card-header { background: var(--cat-infra); }
+  .card[data-cat="infra"]    .card-why-label { color: var(--cat-infra); }
+
+  .card[data-cat="strategy"] .card-header { background: var(--cat-strategy); }
+  .card[data-cat="strategy"] .card-why-label { color: var(--cat-strategy); }
+
+  .card[data-cat="game"]     .card-header { background: var(--cat-game); }
+  .card[data-cat="game"]     .card-best-for-label { color: var(--cat-game); }
+
+  /* ===== EMPTY CELL ===== */
+  .card.empty {
+    background: transparent;
+    border: none;
+  }
+
+  /* ===== PRINT ===== */
+  @media print {
+    @page {
+      size: 11in 8.5in;
+      margin: 0;
+    }
+
+    body { background: none; }
+
+    .page {
+      width: 11in;
+      height: 8.5in;
+      margin: 0;
+      padding: 0;
+      box-shadow: none;
+      page-break-after: always;
+    }
+
+    .page:last-child {
+      page-break-after: auto;
+    }
+
+    .card {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .card.empty { border: none; }
+    .screen-header { display: none; }
+  }
+
+  /* ===== SCREEN-ONLY HEADER ===== */
+  .screen-header {
+    text-align: center;
+    padding: 0.5in 0.25in 0.25in;
+    font-family: 'Space Mono', monospace;
+    color: #666;
+    font-size: 0.75rem;
+  }
+
+  .screen-header h1 {
+    font-family: 'Lexend', sans-serif;
+    font-size: 1.5rem;
+    color: #1a1a2e;
+    margin-bottom: 0.1in;
+  }
+
+  /* ===== SINGLE-CARD EXPORT MODE (?card=N) ===== */
+  /* Bleed: 36px at 300 DPI = 0.12in per side.
+     Safe area: another 0.12in inset from trim line.
+     Full image: 2.74in × 3.74in (card + bleed on all sides). */
+
+  body.export-mode {
+    background: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  body.export-mode .screen-header,
+  body.export-mode .page { display: none; }
+
+  body.export-mode .export-card {
+    display: flex !important;
+    flex-direction: column;
+    width: 2.74in;
+    height: 3.74in;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+  }
+
+  body.export-mode .export-card .card-header {
+    padding: 0.34in 0.42in 0.08in;
+    margin: 0;
+  }
+
+  body.export-mode .export-card .card-body {
+    padding: 0.08in 0.42in 0.36in;
+  }
+</style>
+</head>
+<body>
+
+<div class="screen-header">
+  <h1>Nonprofit Tech Cards</h1>
+  <p>dsmHack &mdash; Poker size (2.5&times;3.5&Prime;) &mdash; 8 per sheet, landscape 8.5&times;11 &mdash; Cut along dashed lines</p>
+</div>
+
+<div id="card-container"></div>
+
+<script>
+const CARDS_PER_PAGE = 8;
+
+function escHtml(str) {
+  return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+function renderCard(card, categories) {
+  const cat = categories[card.category];
+  const isGame = card.category === 'game';
+  const classes = `card${isGame ? ' game-card' : ''}`;
+
+  let footerHtml = '';
+  if (isGame && card.bestFor) {
+    footerHtml = `
+      <div class="card-best-for">
+        <div class="card-best-for-label">Best for</div>
+        <div class="card-best-for-text">${escHtml(card.bestFor)}</div>
+      </div>`;
+  } else if (card.why) {
+    footerHtml = `
+      <div class="card-why">
+        <div class="card-why-label">Why it matters</div>
+        <div class="card-why-text">${escHtml(card.why)}</div>
+      </div>`;
+  }
+
+  return `
+    <div class="${classes}" data-cat="${card.category}">
+      <div class="card-header">
+        <div class="card-number">${escHtml(card.number)}</div>
+        <div class="card-category">${escHtml(cat.label)}</div>
+      </div>
+      <div class="card-body">
+        <div class="card-title">${escHtml(card.title)}</div>
+        <div class="card-description">${escHtml(card.description)}</div>
+        ${footerHtml}
+      </div>
+    </div>`;
+}
+
+function renderPages(data) {
+  const container = document.getElementById('card-container');
+  const cards = data.cards;
+  const pageCount = Math.ceil(cards.length / CARDS_PER_PAGE);
+
+  let html = '';
+  for (let p = 0; p < pageCount; p++) {
+    const start = p * CARDS_PER_PAGE;
+    const pageCards = cards.slice(start, start + CARDS_PER_PAGE);
+
+    html += `<div class="page">`;
+    for (const card of pageCards) {
+      html += renderCard(card, data.categories);
+    }
+    // Fill remaining slots with empty cards
+    const remaining = CARDS_PER_PAGE - pageCards.length;
+    for (let e = 0; e < remaining; e++) {
+      html += `<div class="card empty"></div>`;
+    }
+    html += `</div>`;
+  }
+
+  container.innerHTML = html;
+}
+
+// ===== SINGLE-CARD EXPORT MODE (?card=N) =====
+function renderExportCard(data) {
+  const params = new URLSearchParams(window.location.search);
+  const cardIdx = params.get('card');
+  if (cardIdx === null) return false;
+
+  const idx = parseInt(cardIdx, 10);
+  if (idx < 0 || idx >= data.cards.length) return false;
+
+  document.body.classList.add('export-mode');
+  const card = data.cards[idx];
+  const cardHtml = renderCard(card, data.categories);
+
+  // Insert and add export-card class
+  const wrapper = document.createElement('div');
+  wrapper.innerHTML = cardHtml.trim();
+  const el = wrapper.firstElementChild;
+  el.classList.add('export-card');
+  el.style.borderRadius = '0';
+  document.body.appendChild(el);
+
+  return true;
+}
+
+// ===== INIT =====
+fetch('cards.json')
+  .then(r => r.json())
+  .then(data => {
+    if (!renderExportCard(data)) {
+      renderPages(data);
+    }
+  });
+</script>
+</body>
+</html>

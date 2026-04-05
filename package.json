@@ -1,0 +1,17 @@
+{
+  "name": "dsmhack-cards",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Nonprofit Tech Cards for dsmHack — printable playing cards",
+  "scripts": {
+    "dev": "npx serve . -l 3000 --no-clipboard",
+    "export": "node export-cards.mjs",
+    "clean": "rm -rf card-images"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "0BSD",
+  "dependencies": {
+    "puppeteer": "^24.40.0"
+  }
+}
